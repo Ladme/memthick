@@ -2,7 +2,7 @@
 
 Calculate 2D maps of membrane thickness. Rewrite of an older `memthick` program available from `https://github.com/Ladme/memdian`.
 
-### Installation
+## Installation
 1. [Install Rust.](https://www.rust-lang.org/tools/install)
 2. Clone this repository:
 ```bash
@@ -22,11 +22,11 @@ cd memthick && cargo build --release
 
 The compiled binary will be placed inside `./target/release`.
 
-### How it works
+## How it works
 
 `memthick` generates a mesh for every membrane leaflet with bins every 0.1 nm (by default) and calculates the average z-position of phosphate beads in each bin from the simulation trajectory. Membrane thickness is then calculated for each bin as the difference between the average z-position of phosphates in the upper-leaflet bin and the average z-position of phosphates in the corresponding lower-leaflet bin.
 
-### Options
+## Options
 
 ```
 Calculate a 2D map of membrane thickness.
@@ -91,7 +91,7 @@ When specifying lipid phosphates using the `-p` flag, note that `memthick` expec
 
 When using `memthick` to analyze a membrane-protein simulation, it is advisable to center and RMSD-fit the protein. Otherwise, any interesting changes in membrane thickness might get averaged out.
 
-### Example
+## Example
 
 ```
 memthick -s system.gro -f md_centered.xtc -l "resname POPC" --xmin=-2 --xmax 18 --ymin=-2 --ymax 18 -a 15
